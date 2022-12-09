@@ -1,5 +1,10 @@
 (function($) {
-
+	//clears form on reload if user clicks go back after submission
+	window.onbeforeunload = () => {
+		for (const form of document.getElementsByTagName('form')) {
+			form.reset();
+		}
+	}
 	/**
 	 * Generate an indented list of links from a nav. Meant for use with panel().
 	 * @return {jQuery} jQuery object.
